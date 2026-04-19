@@ -65,9 +65,10 @@
   body {
 	margin:0;
 	padding:0;
-	background-color:#ffffff;
-	color:#1a1a1a;
-	font-family:"Open Sans",system-ui;
+	background-color:var(--cd-bg);
+	background-image:linear-gradient(160deg,var(--cd-bg) 0%,var(--cd-bg-soft) 100%);
+	color:var(--cd-text);
+	font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
 	font-size:1.125rem;     				/* 18px */
     font-weight:400;
 	line-height:1.6;
@@ -94,6 +95,14 @@
 /* Base size - 16px browser default */
 :root {
   font-size:16px;           /* Using a 1.25 modular scale for typography */
+	--cd-primary:#2d3436;
+	--cd-secondary:#636e72;
+	--cd-accent:#a44929;
+	--cd-accent-hover:#8f3e24;
+	--cd-bg:#fafafa;
+	--cd-bg-soft:#f6eee8;
+	--cd-text:#2d3436;
+	--cd-text-dark:#f6f2ef;
   --scale-0:1rem;           /* 16px */
   --scale-1:1.25rem;        /* 20px */
   --scale-2:1.563rem;       /* 25px */
@@ -128,6 +137,7 @@ h1 {
 	margin:0 0 var(--spacing-m) 0;
 	font-size:var(--scale-5);           /* ~49px */
   	font-weight:800;
+	color:var(--cd-primary);
 	line-height:1.1;
 	letter-spacing:-0.02em;
 	word-wrap:break-word;
@@ -140,6 +150,7 @@ body {
 .container p {
 	margin:0 0 var(--spacing-xl) 0;
 	font-size:var(--scale-1);
+	color:var(--cd-secondary);
 	line-height:1.6;
 }
 
@@ -177,11 +188,11 @@ footer {
 /* Links
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   a {
-	color:#2457F5;
+	color:var(--cd-accent);
 	text-decoration:underline;
 }
 a:hover {
-	color:#083BDA;
+	color:var(--cd-accent-hover);
 }
 
 /* Buttons
@@ -256,14 +267,15 @@ a:hover {
 	outline-offset: 2px;
   }
 :root.theme-dark body {
-	background-color:#121212;
-	color:#ffffff;
+	background-color:var(--cd-primary);
+	background-image:linear-gradient(160deg,var(--cd-primary) 0%,#1f2527 100%);
+	color:var(--cd-text-dark);
 }
 :root.theme-dark a:not(.button) {
-	color:#4899F7;
+	color:#ffd5c4;
 }
 :root.theme-dark a:not(.button):hover {
-	color:#7AB8FF;
+	color:#ffe3d7;
 }
 
 /* Auto theme */
@@ -272,18 +284,19 @@ a:hover {
 }
 @media (prefers-color-scheme:dark) {
 	:root.theme-auto body {
-	background-color:#121212;
-	color:#ffffff;
+	background-color:var(--cd-primary);
+	background-image:linear-gradient(160deg,var(--cd-primary) 0%,#1f2527 100%);
+	color:var(--cd-text-dark);
 }
 :root.theme-auto :focus-visible {
     outline: 2px solid #4899F7;
     outline-offset: 2px;
   }
 :root.theme-auto a:not(.button) {
-	color:#4899F7;
+	color:#ffd5c4;
 }
 :root.theme-auto a:not(.button):hover {
-	color:#7AB8FF;
+	color:#ffe3d7;
 }
 }
 
